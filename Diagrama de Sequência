@@ -1,0 +1,26 @@
+@startuml
+actor Aluno
+actor Professor
+entity Sistema
+
+' Sequência 1: Aluno acessando a aula online
+Aluno -> Sistema: Acessa o site
+Aluno -> Sistema: Faz o login
+Aluno -> Sistema: Insere e-mail e senha
+Sistema -> Aluno: Login realizado com sucesso
+
+' Sequência 2: Agendamento de Aulas ao Vivo
+Aluno -> Sistema: Acessa a aula online
+Sistema -> Professor: Exibe horários disponíveis
+Aluno -> Sistema: Seleciona horário e solicita agendamento
+Professor -> Sistema: Confirma aula
+Sistema -> Aluno: Envia notificação de confirmação
+
+' Sequência 3: Interação em Fórum/Chat
+Aluno -> Sistema: Envia dúvida para Fórum/Chat
+Sistema -> Professor: Exibe dúvida
+Sistema -> Aluno: Exibe resposta
+Professor -> Sistema: Responde à dúvida
+Sistema -> Aluno: Notifica resposta
+
+@enduml
